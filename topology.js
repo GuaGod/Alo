@@ -51,42 +51,40 @@ function Graph(){
     }
     var time=0;
     var DFSVisit=function(u,color,d,f,p){
-        console.log('discover '+u);
+        console.log('discoverd '+u);
         color[u]='grey';
         d[u]=++time;
         var neighbors=adjList.get(u);
         for(var i=0;i<neighbors.length;i++){
-            if(color[neighbors[i]]=='white'){
-                var w=neighbors[i];
+            var w=neighbors[i];
+            if(color[w]==='white'){
                 p[w]=u;
                 DFSVisit(w,color,d,f,p);
             }
         }
-        color[u]='black';
+        color[w]='black';
         f[u]=++time;
-        console.log('finish '+u);
-    }
+        console.log('explored '+u);
+    };
     this.DFS=function(){
         var color=initializeColor(),
             d=[],
             f=[],
-            p=[];
-        time=0;
+            p=[],
+            time=0;
         for(var i=0;i<vertices.length;i++){
-            var w=vertices[i];
-            d[w]=0;
-            f[w]=0;
-            p[w]=null;
+            f[vertices[i]]=0;
+            d[vertices[i]]=0;
+            p[vertices[i]]=null;
         }
-        for(i=0;i<vertices.length;i++){
-            var u=vertices[i];
-            if(color[u]=='white'){
-                DFSVisit(u,color,d,f,p);
+        for(var i=0;i<vertices.length;i++){
+            if(color[vertices[i]]==='white'){
+                DFSVisit(vertices[i],color,d,f,p);
             }
         }
         return {
-            discover:d,
-            finish:f,
+            discovery:d,
+            finished:f,
             predecessors:p
         }
     }
