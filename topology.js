@@ -77,7 +77,7 @@ function Graph(){
             d[vertices[i]]=0;
             p[vertices[i]]=null;
         }
-        for(var i=0;i<vertices.length;i++){
+        for(i=0;i<vertices.length;i++){
             if(color[vertices[i]]==='white'){
                 DFSVisit(vertices[i],color,d,f,p);
             }
