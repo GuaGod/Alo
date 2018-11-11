@@ -11,7 +11,7 @@ function Graph(){
         for(var v=0;v<dist.length;v++){
             if(visited[v]==false&&dist[v]<=min){
                 min=dist[v];
-                minIndex=v;
+                minIndex=v; 
             }
         }
         return minIndex;
