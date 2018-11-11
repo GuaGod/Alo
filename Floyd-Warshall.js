@@ -16,7 +16,7 @@ function Graph(){
                 dist[i][j]=this.graph[i][j];
             }
         }
-        for(k=0;k<length;k++){
+        for(k=0;k<length;k++){  //length的值有待商榷 应该是从一个点到另一个的最长路线
             for(i=0;i<length;i++){
                 for(j=0;j<length;j++){
                     if(dist[i][k]+dist[k][j]<dist[i][j]){
