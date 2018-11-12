@@ -13,7 +13,7 @@ function Graph(){
         }
         return false;
     };
-    this.kruskal=function(){
+    this.kruskal=function(){                                                                     
         var length=this.graph.length,
         parent=[],cost,
         ne=0,a,b,u,v,i,j,min;
