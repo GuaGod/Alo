@@ -20,7 +20,7 @@ function lcs(wordX,wordY){
                 //{3}
             }else{
                 a=l[i-1][j];
-                b=l[i][]
+                
             }
         }
     }
